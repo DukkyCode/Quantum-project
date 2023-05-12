@@ -60,7 +60,7 @@ headers=["Phase", "Fraction", "Guess for r"]
 df = pd.DataFrame(rows, columns=headers)
 print(df)
 
-a = 7
+a = 8
 FACTOR_FOUND = False
 ATTEMPT = 0
 while not FACTOR_FOUND:

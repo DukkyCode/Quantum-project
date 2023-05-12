@@ -1,0 +1,30 @@
+from shor_functions import *
+
+# Specify variables
+N_COUNT = 8  # number of counting qubits
+a = 7
+N = 15
+
+# Create QuantumCircuit with N_COUNT counting qubits
+# plus 4 qubits for U to act on
+qc = QuantumCircuit(N_COUNT + 4, N_COUNT)
+
+# Initialize counting qubits
+# in state |+>
+for q in range(N_COUNT):
+    qc.h(q)
+
+# And auxiliary register in state |1>
+qc.x(N_COUNT)
+
+# Do controlled-U operations
+for q in range(N_COUNT):
+    qc.append(c_amod15(a, 2**q),
+             [q] + [i+N_COUNT for i in range(4)])
+    print("N-COUNT: " + str(q))
+    print("Depth: ", qc.depth)
+    print(qc.depth)
+
+print(qc.depth)
+# Do inverse-QFT
+qc.append(qft_dagger(N_COUNT), range(N_COUNT))
