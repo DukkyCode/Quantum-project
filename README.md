@@ -1,1 +1,3 @@
-This is the project of building Shor's Algorithm on Cirq by Duc Nguyen and Sandro Availiani
+# Shor's Algorihtm Research
+
+by Duc Anh Nguyen & Sandro Avaliani
