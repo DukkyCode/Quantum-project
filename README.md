@@ -1,3 +1,3 @@
-# Shor's Algorihtm Research
+# Shor's Algorihtm
 
 by Duc Anh Nguyen & Sandro Avaliani
